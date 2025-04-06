@@ -1,0 +1,17 @@
+<%- include('partials/headerLogueado') %>
+
+<h2>Agregar producto</h2>
+<form action="/productos/agregar" method="get" >
+  <label>Imagen del producto:</label>
+  <input type="file" name="imagen">
+
+  <label>Nombre del producto:</label>
+  <input type="text" name="nombre" required>
+
+  <label>Descripción:</label>
+  <input type="text" name="descripcion">
+
+  <button type="submit">Agregar</button>
+</form>
+
+<%- include('partials/footer') %>
