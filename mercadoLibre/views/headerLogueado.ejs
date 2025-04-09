@@ -17,6 +17,15 @@
 <body>
 	<!-- Header -->
 	<header class="main-header">
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/perfil"></a>
+            <a href="/producto/agregar">Agregar producto</a>
+            <p>Hola <%= usuario.nombre %></p>
+        </nav>
+
+
+
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
@@ -77,3 +86,5 @@
 	
 </body>	
 </html>
+
+<%- include('partials/headerLogueado', { usuario }) %>
