@@ -29,7 +29,7 @@ const datos = {
     ],
     productoss: [
         {
-            imagen: 'https://www.chevrolet.com.ar/content/dam/chevrolet/mercosur/argentina/espanol/index/01-vehicles/onix-premier/mov/01-images/2023-onix-arg-mov-01.jpg',
+            imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbgnW7I-duvxlziaV7asW0JaOUF-_DNBkVmg&s',
             nombre: 'Chevrolet Onix',
             descripcion: 'Auto compacto moderno y eficiente.',
             comentarios: [
@@ -42,31 +42,12 @@ const datos = {
                     nombreUsuario: 'lucasperez',
                     comentario: 'Buen equipamiento por su precio.',
                     imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
-                }
-            ]
-        },
-        {
-            imagen: 'https://acnews.blob.core.windows.net/imgnews/large/NAZ_85df9846b1894709b99b7bc03bdfdc6a.jpg',
-            nombre: 'Toyota Hilux',
-            descripcion: 'Camioneta robusta ideal para trabajo pesado.',
-            comentarios: [
-                {
-                    nombreUsuario: 'fernando_rural',
-                    comentario: 'Indestructible. La uso en el campo.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/35.jpg'
                 },
                 {
-                    nombreUsuario: 'vale_4x4',
-                    comentario: 'Impecable para offroad.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/25.jpg'
-                }
-            ]
-        },
-        {
-            imagen: 'https://cdn.motor1.com/images/mgl/n99eL/s3/2023-ford-ranger.jpg',
-            nombre: 'Ford Ranger',
-            descripcion: 'Pick-up de gran potencia y tecnología.',
-            comentarios: [
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
                 {
                     nombreUsuario: 'jorgeford',
                     comentario: 'Excelente respuesta del motor.',
@@ -80,53 +61,162 @@ const datos = {
             ]
         },
         {
-            imagen: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Renault_Sandero_RS_%28facelift%29_IMG_5423.jpg/1200px-Renault_Sandero_RS_%28facelift%29_IMG_5423.jpg',
-            nombre: 'Renault Sandero RS',
-            descripcion: 'Versión deportiva del hatchback Sandero.',
+            imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHSdEJadvtDqJSNWKbZiwtRstZXE5JwzgFg&s',
+            nombre: 'Toyota Hilux',
+            descripcion: 'Camioneta robusta ideal para trabajo pesado.',
             comentarios: [
                 {
-                    nombreUsuario: 'nico_rs',
-                    comentario: 'Ideal para ciudad con toque deportivo.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/19.jpg'
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
                 },
                 {
-                    nombreUsuario: 'flor_sandero',
-                    comentario: 'Muy cómodo y ágil.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/17.jpg'
-                }
-            ]
-        },
-        {
-            imagen: 'https://http2.mlstatic.com/D_NQ_NP_2X_933144-MLA73131841693_112023-F.webp',
-            nombre: 'Volkswagen Amarok',
-            descripcion: 'Camioneta potente y cómoda.',
-            comentarios: [
-                {
-                    nombreUsuario: 'marcelo_vw',
-                    comentario: 'Muy buena para viajar.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/11.jpg'
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
                 },
-                {
-                    nombreUsuario: 'carlaamarok',
-                    comentario: 'Tiene de todo. Tecnología full.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/32.jpg'
-                }
-            ]
-        },
-        {
-            imagen: 'https://imagenes.elpais.com/resizer/sENf4QU-muqKoSk9B4mP92yojqI=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/BFVUJAWZDJDUDFWGB3FUGXCTKA.jpg',
-            nombre: 'Fiat Cronos',
-            descripcion: 'Sedán compacto, el más vendido en Argentina.',
-            comentarios: [
                 {
                     nombreUsuario: 'agus_fiat',
                     comentario: 'Relación precio/calidad insuperable.',
                     imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
                 },
                 {
-                    nombreUsuario: 'milu_cronos',
-                    comentario: 'Confort y buen consumo.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/36.jpg'
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
+                }
+            ]
+        },
+        {
+            imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQksKXx6XFbAcamfGqA5hXYNVtb1Xkr5Ri2mg&s',
+            nombre: 'Ford Ranger',
+            descripcion: 'Pick-up de gran potencia y tecnología.',
+            comentarios: [
+                {
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
+                },
+                {
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
+                }
+            ]
+        },
+        {
+            imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWmYeonymIcZMegNpptqkkVvX7y_v8GaJHdg&s',
+            nombre: 'Renault Sandero RS',
+            descripcion: 'Versión deportiva del hatchback Sandero.',
+            comentarios: [
+                {
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
+                },
+                {
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
+                }
+            ]
+        },
+        {
+            imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqXrX-iDk8j7GWmiLbzociG9ZELjdZBe9dA&s',
+            nombre: 'Volkswagen Amarok',
+            descripcion: 'Camioneta potente y cómoda.',
+            comentarios: [
+                {
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
+                },
+                {
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
+                }
+            ]
+        },
+        {
+            imagen: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvcp_6cVVi8H-cjguN3g8KH_8DE0MUv1xuMg&s',
+            nombre: 'Fiat Cronos',
+            descripcion: 'Sedán compacto, el más vendido en Argentina.',
+            comentarios: [
+                {
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
+                },
+                {
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
                 }
             ]
         },
@@ -136,14 +226,29 @@ const datos = {
             descripcion: 'Auto urbano con gran diseño europeo.',
             comentarios: [
                 {
-                    nombreUsuario: 'pablo208',
-                    comentario: 'El diseño es lo mejor que tiene.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/60.jpg'
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
                 },
                 {
-                    nombreUsuario: 'vale_peugeot',
-                    comentario: 'Compacto pero con mucha onda.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/63.jpg'
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
                 }
             ]
         },
@@ -153,14 +258,29 @@ const datos = {
             descripcion: 'Hatchback deportivo de alto rendimiento.',
             comentarios: [
                 {
-                    nombreUsuario: 'kevinvtec',
-                    comentario: 'Una bestia en pista y calle.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/50.jpg'
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
                 },
                 {
-                    nombreUsuario: 'julia_r',
-                    comentario: 'El auto de mis sueños.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/50.jpg'
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
                 }
             ]
         },
@@ -170,14 +290,29 @@ const datos = {
             descripcion: 'SUV elegante con buen rendimiento.',
             comentarios: [
                 {
-                    nombreUsuario: 'sebaskia',
-                    comentario: 'Ideal para la familia.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/12.jpg'
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
                 },
                 {
-                    nombreUsuario: 'romik',
-                    comentario: 'Comodidad, diseño y seguridad.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/28.jpg'
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
                 }
             ]
         },
@@ -187,14 +322,29 @@ const datos = {
             descripcion: 'Camioneta eléctrica futurista.',
             comentarios: [
                 {
-                    nombreUsuario: 'elon_fan',
-                    comentario: 'Literalmente de otro planeta.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/men/4.jpg'
+                    nombreUsuario: 'martina89',
+                    comentario: 'Muy económico en ciudad.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/44.jpg'
                 },
                 {
-                    nombreUsuario: 'techlover88',
-                    comentario: 'La quiero ya en Argentina.',
-                    imgPerfil: 'https://randomuser.me/api/portraits/women/5.jpg'
+                    nombreUsuario: 'lucasperez',
+                    comentario: 'Buen equipamiento por su precio.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/22.jpg'
+                },
+                {
+                    nombreUsuario: 'agus_fiat',
+                    comentario: 'Relación precio/calidad insuperable.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/27.jpg'
+                },
+                {
+                    nombreUsuario: 'jorgeford',
+                    comentario: 'Excelente respuesta del motor.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/men/46.jpg'
+                },
+                {
+                    nombreUsuario: 'sofiatrucks',
+                    comentario: 'Me encanta el diseño.',
+                    imgPerfil: 'https://randomuser.me/api/portraits/women/41.jpg'
                 }
             ]
         }
