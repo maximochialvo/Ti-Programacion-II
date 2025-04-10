@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const usuarioRutas = require('./routes/userRoutes');
-
+const mainRutas = require('./routes/main');
 const productoRutas = require('./routes/productRoutes');
 
 
@@ -28,6 +28,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/usuarios', usuarioRutas);
 app.use('/producto', productoRutas);
+app.use('/productos', productoRutas);
+app.use('/', mainRutas);
+zgi
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
