@@ -3,7 +3,7 @@ const data = require('../db/datos')
 
 const productoController = {
     producto: function (req, res) {
-      res.render('productAdd');
+      res.render('productAdd', { productos: data.productos});
     },
 
     detalle: function (req, res) {
