@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('./partials/header.ejs')  %>
  
  <h2>Login</h2>
  <form action="/usuarios/login" method="get">
@@ -14,8 +14,8 @@
    <button type="submit">Ingresar</button>
  </form>
  
- <%- include('partials/footer') %>
 
+ <%- include('partials/footer') %>
 
 
 <!DOCTYPE html>
@@ -34,6 +34,7 @@
 	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/app.css">
+	<%- include("./partials/head.ejs")%>
 </head>
 
 <body>
