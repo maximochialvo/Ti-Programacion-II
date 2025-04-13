@@ -57,117 +57,302 @@
 				<section class="product-box">
 					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[0].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[0].nombre %></h2>
+							<p><%= productos[0].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[1].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[1].nombre %></h2>
+							<p><%= productos[1].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[2].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[2].nombre %></h2>
+							<p><%= productos[2].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[3].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[3].nombre %></h2>
+							<p><%= productos[3].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[4].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[4].nombre %></h2>
+							<p><%= productos[4].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[5].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[5].nombre %></h2>
+							<p><%= productos[5].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[6].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[6].nombre %></h2>
+							<p><%= productos[6].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>
 			</div>
 			<div class="col-12 col-sm-6 col-lg-3">
 				<section class="product-box">
-					<a href="/product">
+					<a href="/roduct">
 						<figure class="product-box_image">
-							<img src="/images/products/default-image.png" alt="cafetera moulinex">
+							<img src="<%= productos[7].imagen %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2>Nombre del producto</h2>
-							<p>Descripción corta del producto Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque
-								delectus ex</p>
-							<p>Comentarios: 12</p>
+							<h2><%= productos[7].nombre %></h2>
+							<p><%= productos[7].descripción %></p>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
+								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
+								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
+								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
+								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
+							</div>
+							<div>
+								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
+								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
+								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
+							</div>
 						</article>
 					</a>
 				</section>

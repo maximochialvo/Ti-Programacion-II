@@ -15,7 +15,15 @@ const userController = {
     perfil: function(req, res){
       const usuario = data.usuario
       res.render('data')
-  }
+    },
+    productos: function(req, res){
+      const usuario = data.productos
+      res.render('data')
+    },
+    productos: function(req, res){
+      const usuario = data.productos
+      res.render('index')
+    }
 }
   
   module.exports = userController;
