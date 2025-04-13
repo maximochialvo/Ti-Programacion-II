@@ -20,9 +20,9 @@ const userController = {
       const usuario = data.productos
       res.render('data')
     },
-    productos: function(req, res){
-      const usuario = data.productos
-      res.render('index')
+    productosIndex: function(req, res){
+      const productos = data.productos
+      res.render('index', {productos})
     }
 }
   
