@@ -5,7 +5,7 @@ const userController = require('../controllers/userController')
 router.get('/', userController.index)
 router.get('/registro', userController.registro)
 router.get('/login', userController.inicio)
-router.get('/login', userController.perfil)
+
 
 
 
