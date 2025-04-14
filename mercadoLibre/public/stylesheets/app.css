@@ -597,8 +597,7 @@ h1, h2, h3, .tituloGeneral {
 
 a {
   font-weight: bold;
-  color: blue;
-  text-decoration: underline;
+  color: var(--dark-blue);
 }
 
 .tituloGeneral{
