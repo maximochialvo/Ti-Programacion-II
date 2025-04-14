@@ -1,12 +1,22 @@
+const data = require('../db/datos')
+
 const mainController = {
-    lupa: function(req, res) {
-      res.render('main'); 
+    index: function(req, res){
+      const productos = data.productos
+      res.render('index', {productos})
+    },
+
+    buscar: function(req, res) {
+      res.render('search-results');
+    },
+
+    registro: function (req, res) {
+      res.render('register');
     },
   
-    buscar: function(req, res) {
-      const resultados = ['Chevrolet Onix', 'Toyota Hilux"', 'Renault Sandero RS'];
-      res.render('search-results', { resultados: resultados });
-    }
+    login: function (req, res) {
+      res.render('login');
+    },
   };
   
   module.exports = mainController;

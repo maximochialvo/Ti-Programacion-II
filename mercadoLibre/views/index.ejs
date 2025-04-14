@@ -1,194 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="/images/logo-mercado-liebre.jpg" />
-	
-	
-	<title> Mercado Liebre Argentina</title>
-			<!-- Font Awesome Stylesheet -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-	<!-- Bootstrap Grid Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-	<!-- Own Stylesheet -->
-	<link rel="stylesheet" href="/stylesheets/app.css">
-	<%- include("./partials/head.ejs")%>
-</head>
-<body>
+<%- include("./partials/head.ejs")%>
 
-	<%- include('./partials/header.ejs')  %>
-	
-	<!-- Banner -->
-	<div class="banner">
-		<img src="/images/img-home-banner.jpg" alt="Banner de ofertas">
-	</div>
-	<!-- /Banner -->
+	<body>
 
-	<!-- Novedades -->
-	<div class="container products-wrapper">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Productos</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%= productos[0].imagen %>" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2><%= productos[0].nombre %></h2>
-							<p><%= productos[0].descripción %></p>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
-								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
-								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
-								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
-								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
-								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
-							</div>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%= productos[1].imagen %>" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2><%= productos[1].nombre %></h2>
-							<p><%= productos[1].descripción %></p>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
-								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
-								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
-								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
-								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
-								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
-							</div>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%= productos[2].imagen %>" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2><%= productos[2].nombre %></h2>
-							<p><%= productos[2].descripción %></p>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
-								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
-								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
-								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
-								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
-								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
-							</div>
-						</article>
-					</a>
-				</section>
-			</div>
-			<div class="col-12 col-sm-6 col-lg-3">
-				<section class="product-box">
-					<a href="/product">
-						<figure class="product-box_image">
-							<img src="<%= productos[3].imagen %>" alt="cafetera moulinex">
-						</figure>
-						<article class="product-box_data">
-							<h2><%= productos[3].nombre %></h2>
-							<p><%= productos[3].descripción %></p>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[0].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[0].comentario %></p>
-								<img src="<%= productos[0].comentarios[0].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[1].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[1].comentario %></p>
-								<img src="<%= productos[0].comentarios[1].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[2].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[2].comentario %></p>
-								<img src="<%= productos[0].comentarios[2].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[3].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[3].comentario %></p>
-								<img src="<%= productos[0].comentarios[3].imgPerfil %>" alt="img de perfil">
-							</div>
-							<div>
-								<h2 class="nombre"><%= productos[0].comentarios[4].nombreUsuario %></h2>
-								<p class="comentario"><%= productos[0].comentarios[4].comentario %></p>
-								<img src="<%= productos[0].comentarios[4].imgPerfil %>" alt="img de perfil">
-							</div>
-						</article>
-					</a>
-				</section>
-			</div>
-		</div>
-	</div>
+		<%- include('./partials/header.ejs') %>
 
-	<%- include("partials/footer") %>
+			<!-- Banner -->
+			<div class="banner">
+				<img src="/images/img-home-banner.jpg" alt="Banner de ofertas">
+			</div>
+			<!-- /Banner -->
 
-</body>	
+			<!-- Novedades -->
+
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Productos</h2>
+					</div>
+					<!-- Show the "ultimos" products -->
+					<% for( let i=0; i < productos.length; i++ ) { %>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<section class="product-box">
+								<a href="/producto">
+									<figure class="product-box_image">
+										<img src="<%- productos[i].imagen %>" alt="cafetera moulinex">
+									</figure>
+									<article class="product-box_data">
+										<h2>
+											<%- productos[i].nombre %>
+										</h2>
+										<p>
+											<%- productos[i].descripcion %>
+										</p>
+										<p>Comentarios: 
+
+											<%= productos[i].comentarios.length %>
+										</p>
+									</article>
+								</a>
+							</section>
+						</div>
+						<% } %>
+
+				</div>
+			</div>
+
+
+			<%- include("partials/footer") %>
+
+	</body>
+
 </html>
