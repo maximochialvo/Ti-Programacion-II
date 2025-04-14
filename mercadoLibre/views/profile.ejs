@@ -4,7 +4,8 @@
 <%- include("./partials/head.ejs")%>
 <body>
 
-	<%- include('./partials/header.ejs')  %>
+	
+	<%- include('./partials/headerLogueado.ejs') %>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
@@ -21,8 +22,11 @@
 					</h1>
 					<a class="btn mt-3 ml-4" href="">SEGUIR</a>
 				</div>
+				<div class="pirulo">
+					<p><%= usuario.email %></p>
+				</div>
 				<div>
-					<ul class="">
+					<ul class="pirulo">
 						<li>8 productos</li>
 						<li>200 seguidores</li>
 						<li>300 comentarios</li>
@@ -43,7 +47,7 @@
 			<% for( let i=0; i < productos.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/producto">
+						<a href="/producto/detalle/7">
 							<figure class="product-box_image">
 								<img src="<%- productos[i].imagen %>" alt="cafetera moulinex">
 							</figure>

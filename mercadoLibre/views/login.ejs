@@ -2,7 +2,10 @@
 
 <%- include('partials/header') %>
 
-<form action="/login" method="get">
+<body>
+  
+  <div class="contenedorRegistro">
+<form class="formGeneral" action="/profile" method="get">
   <label>Email:</label>
   <input type="email" name="usuario">
 
@@ -15,5 +18,7 @@
 
   <button type="submit">Ingresar</button>
 </form>
+  </div>
+</body>
 
 <%- include('partials/footer') %>

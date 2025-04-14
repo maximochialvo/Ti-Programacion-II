@@ -1,26 +1,32 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 
-<form action="/registro" method="get">
-  <label>Email:</label>
-  <input type="email" name="email">
+<body>
+  <div class="contenedorRegistro">
+  <form class="formGeneral" action="/login" method="get">
+    <label>Email:</label>
+    <input type="email" name="email">
+  
+    <label>Usuario:</label>
+    <input type="text" name="usuario">
+  
+    <label>Contraseña:</label>
+    <input type="password" name="contrasenia">
+  
+    <label>Fecha de nacimiento:</label>
+    <input type="date" name="fechaNacimiento">
+  
+    <label>Número de documento:</label>
+    <input type="number" name="dni">
+  
+    <label>Foto de perfil (URL):</label>
+    <input type="text" name="fotoPerfil">
+  
+    <button type="submit">Registrarme</button>
+  </form>
+</div>
+</body>
 
-  <label>Usuario:</label>
-  <input type="text" name="usuario">
 
-  <label>Contraseña:</label>
-  <input type="password" name="contrasenia">
-
-  <label>Fecha de nacimiento:</label>
-  <input type="date" name="fechaNacimiento">
-
-  <label>Número de documento:</label>
-  <input type="number" name="dni">
-
-  <label>Foto de perfil (URL):</label>
-  <input type="text" name="fotoPerfil">
-
-  <button type="submit">Registrarme</button>
-</form>
 
 <%- include('partials/footer') %>

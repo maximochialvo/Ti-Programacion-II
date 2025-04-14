@@ -7,11 +7,11 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #EAC926;
-  --dark-blue: #03264C;
+  --yellow: #191b47;
+  --dark-blue: #5f63b8;
   --light-blue: #1259c3;
-  --gray: #666666;
-  --light-gray: #ebebeb;
+  --gray: ##191b47;
+  --light-gray: #191b47;
   --green: #39b54a;
   --base-font-family: 'Montserrat', sans-serif
 }
@@ -60,6 +60,7 @@ img {
 
 .logoclass{
   border-radius: 90px;
+  opacity: 1;
 }
 
 input,
@@ -106,6 +107,21 @@ hr {
   font-size: 1.5em;
 }
 
+.contenedorRegistro {
+  display: flex;
+  justify-content: center;
+}
+
+.formGeneral {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 200;
+  justify-content: center;
+  font-size: medium;
+  color: #facd2c;
+}
+
 .search-form_button {
   position: absolute;
   right: 2px;
@@ -145,11 +161,15 @@ hr {
   border: 0px;
   cursor: pointer;
   font-size: 1em;
+
 }
+
+
 
 .logout:hover{
   color: #1259c3;
 }
+
 
 .left-navbar a,
 .right-navbar a {
@@ -178,8 +198,8 @@ hr {
 
 .products-title {
   font-size: 2.4em;
-  font-weight: 400;
-  color: var(--gray);
+  font-weight: 500;
+  color: #facd2d;
 }
 
 .product-box {
@@ -208,7 +228,7 @@ hr {
 
 .product-box_data h2 {
   font-size: 2.4em;
-  font-weight: 300;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -483,6 +503,16 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
+.pirulo{
+  color: #5f63b8;
+  font-weight: 600;
+  font-size: x-large;
+  
+}
+
+.pirulo p{
+  margin: 1px;
+}
 
 
 /*====== Media-Queries ======*/
@@ -536,16 +566,12 @@ textarea.form-input {
     margin: auto;
   }
 }
-body {
-  font-family: "Shadows Into Light", cursive;
-  background-color: #e1dcb2;
-  color:black;
-}
 
-h1, h2, h3, .tituloGeneral {
+
+h1, h3, .tituloGeneral {
   font-family: "Playfair Display", serif;
   font-weight: 900;
-  color: #263651;
+  color: #facd2c;
   text-align: center;
   font-size: xx-large;
 }
@@ -618,12 +644,9 @@ a {
     font-weight: 900;
     font-style: italic;
 
-    color: ;
+
   }
 }
 
-.main-footer, .main-header{
-  background-color: rgb(224 224 224);
-  color: darkmagenta;
-}
+
 
