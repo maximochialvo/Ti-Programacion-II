@@ -1,5 +1,5 @@
 /*====== Fonts ======*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Shadows+Into+Light&display=swap');
 
 
 /*====== Variables ======*/
@@ -533,22 +533,18 @@ textarea.form-input {
     margin: auto;
   }
 }
-body{
-  .shadows-into-light-regular {
-    font-family: "Shadows Into Light", cursive;
-    font-weight: 400;
-    font-style: normal;
-    background-color: chocolate;
-    color: burlywood;
-  }  
+body {
+  font-family: "Shadows Into Light", cursive;
+  background-color: chocolate;
+  color: burlywood;
 }
-title, h1, h2 ,h3 {
-  
-  .lato-thin {
-    font-family: "Lato", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
+
+h1, h2, h3, .tituloGeneral {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  color: darkcyan;
+  text-align: center;
+}
   
   .lato-light {
     font-family: "Lato", sans-serif;
@@ -603,14 +599,10 @@ title, h1, h2 ,h3 {
     font-weight: 900;
     font-style: italic;
   }
-}
-a{
-  a {
-    font-weight: bold;
-    color: blue;
-    text-decoration: underline;
-  }
-  
+
+a {
+  font-weight: bold;
+  color: var(--dark-blue);
 }
 
 .tituloGeneral{
@@ -619,6 +611,7 @@ a{
     font-family: "Lato", sans-serif;
     font-weight: 100;
     font-style: normal;
+    text-align: center;
   }
   
   .lato-light {
@@ -682,3 +675,4 @@ a{
   background-color: chocolate;
   color: darkmagenta;
 }
+
