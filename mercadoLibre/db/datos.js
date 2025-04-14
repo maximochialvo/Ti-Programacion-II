@@ -5,7 +5,7 @@ const datos = {
         contrasenia:'hola',
         nacimiento:'23/09/2005',
         dni:'44556677',
-        fotoPerfil:'https://i.pinimg./474x/64/ef/98/64ef980138c10eed414880785c501820.jpg',
+        fotoPerfil:'/images/fotoPerfil.jpg',
     },
 
     productos: [

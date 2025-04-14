@@ -52,6 +52,11 @@ figure {
 
 img {
   width: 100%;
+ 
+}
+
+.logoclass{
+  border-radius: 90px;
 }
 
 input,
