@@ -7,7 +7,7 @@ const mainController = {
     },
 
     buscar: function(req, res) {
-      res.render('search-results');
+      res.render('search-results', {productos : data.productos});
     },
 
     registro: function (req, res) {

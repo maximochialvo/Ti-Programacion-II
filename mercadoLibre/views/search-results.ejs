@@ -15,7 +15,29 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			
+			<% for( let i=0; i < productos.length; i++ ) { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/producto">
+							<figure class="product-box_image">
+								<img src="<%- productos[i].imagen %>" alt="cafetera moulinex">
+							</figure>
+							<article class="product-box_data">
+								<h2>
+									<%- productos[i].nombre %>
+								</h2>
+								<p>
+									<%- productos[i].descripcion %>
+								</p>
+								<p>Comentarios: 
+
+									<%= productos[i].comentarios.length %>
+								</p>
+							</article>
+						</a>
+					</section>
+				</div>
+				<% } %>		
 
 <ul>
   <li>Chevrolet Onix</li>
