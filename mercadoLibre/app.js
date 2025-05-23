@@ -7,8 +7,9 @@ var logger = require('morgan');
 const mainRutas = require('./routes/main');
 const productoRutas = require('./routes/productRoutes');
 const perfilRutas = require('./routes/profile')
+const session = require('express-session');
 
-
+ 
 var app = express();
 
 // view engine setup
@@ -17,9 +18,23 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); 
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: 'contrasena',
+  resave: false,
+  saveUninitialized: true
+}))
+
+app.use(function (req, res, next) {
+  if (req.session.user) {
+    res.locals.user = req.session.user;
+  }
+  
+  return next()
+})
 
 app.use('/', mainRutas);
 app.use('/producto', productoRutas);
@@ -29,6 +44,8 @@ app.use('/profile', perfilRutas);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

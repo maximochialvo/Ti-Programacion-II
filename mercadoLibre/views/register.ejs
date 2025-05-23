@@ -3,18 +3,18 @@
 
 <body>
   <div class="contenedorRegistro">
-  <form class="formGeneral" action="/login" method="post">
+  <form class="formGeneral" action="/users/newuser" method="post">
     <label>Usuario:</label>
-    <input type="text" name="usuario">
+    <input type="text" name="usuario" placeholder="nombre de usuario">
     
     <label>Email:</label>
-    <input type="email" name="email">
+    <input type="email" name="email" placeholder="email">
   
     <label>Contraseña:</label>
-    <input type="password" name="passEncriptada">
+    <input type="password" name="passEncriptada" placeholder="password">
 
     <label>Fecha de nacimiento:</label>
-    <input type="text" name="birthDate">
+    <input type="text" name="birthDate" placeholder="nacimiento">
   
     <button type="submit">Registrarme</button>
   </form>

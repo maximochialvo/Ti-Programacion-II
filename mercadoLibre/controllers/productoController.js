@@ -9,6 +9,12 @@ const productoController = {
     add: function (req, res) {
       res.render('productAdd')
   } 
+
+    buscar: function (req, res) {
+      const: busqueda = req.query.search;
+      const: resultados = data.productos
+      
+    }
   };
 
 

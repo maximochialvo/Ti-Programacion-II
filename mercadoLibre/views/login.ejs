@@ -5,19 +5,21 @@
 <body>
   
   <div class="contenedorRegistro">
-<form class="formGeneral" action="/profile" method="get">
-  <label>Email:</label>
-  <input type="email" name="usuario">
-
-  <label>Contraseña:</label>
-  <input type="password" name="contrasenia">
-
-  <label>
-    <input type="checkbox" name="recordarme"> Recordarme
-  </label>
-
-  <button type="submit">Ingresar</button>
-</form>
+<form action="/users/processLogin" method="post">
+        <section>
+          <label for="">Email: </label>
+          <input type="email" name="email" placeholder="email">
+        </section>
+        <section>
+          <label for="">Password:</label>
+          <input type="password" name="contrasena" placeholder="password">
+        </section>
+        <button type="submit">Ingresar</button>
+        <section>
+          <input type="checkbox" id="recordame" name="recordame">
+          <label for="tyc">Recordame</label>
+        </section>
+      </form>
   </div>
 </body>
 
