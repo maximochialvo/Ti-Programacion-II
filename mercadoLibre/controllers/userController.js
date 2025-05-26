@@ -17,26 +17,27 @@ let usersController = {
 
 
     },
-    
-    create: function(req,res){
-        const usuario = req.body.usuario
-        const email = req.body.email
-       const password = req.body.contrasena
-   
-     let passEncriptada = bcrypt.hashSync(password,10);
-     db.User.create({
-         name: usuario,
-         email: email,
-         password: passEncriptada,
-         birthDate: birthDate
-         
-     }).then(function(){
-         return res.redirect("/")
-     }).catch(function(error){
-         return res.send(error)
-     })
-   
-   },
+
+    create: function (req, res) {
+
+        const user = {
+            name: req.body.usuario,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.contrasena, 10)
+        }
+        if(req.body.contrasena.length < 3 ){
+    	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
+            }
+
+        db.User.create(user)
+        .then(function (userCreated) {
+            return res.redirect("/")
+        }).catch(function (error) {
+            return res.send(error)
+        })
+
+
+    },
 
 
 
@@ -92,7 +93,7 @@ let usersController = {
     logout: function(req, res) {
         //Procesamos el logout destruyendo la sesión y eliminando la cookie.
         req.session.destroy()
-         res.clearCookie("recordarme"); // ← igual que el ejemplo de la imagen
+         res.clearCookie("recordarme"); 
         res.redirect("/");
     }
 
