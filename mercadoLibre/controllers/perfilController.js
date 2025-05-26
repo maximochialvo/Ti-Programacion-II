@@ -22,7 +22,9 @@ let usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.contrasena, 10)
         }
-
+        if(req.body.contrasena.length < 3 ){
+    	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
+            }
 
         db.User.create(user)
         .then(function (userCreated) {
@@ -69,7 +71,7 @@ let usersController = {
                 }
                 res.redirect("/")
             } else {
-                return res.send("contrasenia no coincide")
+                return res.send("contraseña no coincide")
             }
 
         }).catch(function (error) {
@@ -77,15 +79,13 @@ let usersController = {
         })
 
 
-
         //Si además el usuario tildó "recordame" entonces también creamos una cookie con los datos del usuario.
 
         console.log(req.body);
     },
 
-
-
-    logout: function (req, res) {
+    
+    logout: function(req, res) {
         //Procesamos el logout destruyendo la sesión y eliminando la cookie.
         req.session.destroy()
          res.clearCookie("recordarme"); 
