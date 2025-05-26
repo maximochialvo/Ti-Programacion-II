@@ -25,7 +25,7 @@ let usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.contrasena, 10)
         }
-        if(req.body.contrasena.length < 3 ){
+        if(!req.body.contrasena.length, req.body.contrasena.length < 3 ){
     	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
             }
 
@@ -54,8 +54,8 @@ let usersController = {
 
         db.User.findOne({
             where: [{ email: req.body.email }]
-        }).then(function (resultado) {
-            if (!resultado) {
+        }).then(function (usuario) {
+            if (!usuario) {
                 return res.send("No exsiste ese email en la base de datos");
             }
 
@@ -63,7 +63,7 @@ let usersController = {
 
 
 
-            const contraseniaValida = bcrypt.compareSync(req.body.contrasena, resultado.password);
+            const contraseniaValida = bcrypt.compareSync(req.body.contrasena, usuario.contrasena);
 
             console.log(contraseniaValida)
 
@@ -74,7 +74,7 @@ let usersController = {
                 if (req.body.recordarme) {
                     res.cookie("recordarme", resultado.id, {maxAge: 1000*60*5})
                 }
-                res.redirect("/")
+                return res.redirect("/")
             } else {
                 return res.send("contraseña no coincide")
             }
