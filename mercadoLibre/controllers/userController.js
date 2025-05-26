@@ -6,6 +6,9 @@ const bcrypt = require("bcryptjs")
 
 
 let usersController = {
+    index: function (req, res) {
+        res.render('profile', { usuario: data.usuario, productos: data.productos })
+    },
     show: function (req, res) {
         if (req.session.user) {
             return res.redirect("/")
@@ -14,25 +17,28 @@ let usersController = {
 
 
     },
+    
+    create: function(req,res){
+        const usuario = req.body.usuario
+        const email = req.body.email
+       const password = req.body.contrasena
+   
+     let passEncriptada = bcrypt.hashSync(password,10);
+     db.User.create({
+         name: usuario,
+         email: email,
+         password: passEncriptada,
+         birthDate: birthDate
+         
+     }).then(function(){
+         return res.redirect("/")
+     }).catch(function(error){
+         return res.send(error)
+     })
+   
+   },
 
-    create: function (req, res) {
 
-        const user = {
-            name: req.body.usuario,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.contrasena, 10)
-        }
-
-
-        db.User.create(user)
-        .then(function (userCreated) {
-            return res.redirect("/")
-        }).catch(function (error) {
-            return res.send(error)
-        })
-
-
-    },
 
 
 
@@ -97,65 +103,3 @@ module.exports = usersController;
 
 
 
-
-
-
-
-
-
-
-const controlador = {
-    index: function (req, res) {
-        res.render('profile', { usuario: data.usuario, productos: data.productos })
-    },
-
-
-    create: function(req,res){
-     const usuario = req.body.usuario
-     const email = req.body.email
-    const password = req.body.contrasena
-
-  let passEncriptada = bcrypt.hashSync(password,10);
-  db.User.create({
-      name: usuario,
-      email: email,
-      password: passEncriptada,
-      birthDate: birthDate
-      
-  }).then(function(){
-      return res.redirect("/")
-  }).catch(function(error){
-      return res.send(error)
-  })
-
-}
-};
-
-//if (req.body.contrasena.length <3 ){
-//    return res.send("la contrasenia tiene que tener al menos 3 caracteres")
-//}
-
-//.findOne({
-//    where: {
-  //      email: req.body.email
-   // }
-//})
-//.then(function(resultado){
-  //  if (resultado)
-    //    return res.send("el usuario exsiste")
-//})
-
-
-
-// logout: function (req, res) {
-  //      //Procesamos el logout destruyendo la sesión y eliminando la cookie.
-   //     req.session.destroy()
-    //    res.clearCookie("recordarme"); // ← igual que el ejemplo de la imagen
-     //   res.redirect("/");
-    //}
-
-
-
-
-
-module.exports = controlador

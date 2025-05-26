@@ -7,4 +7,6 @@ router.get('/detalle/:id', productoController.detalle);
 router.get('/add', productoController.add)
 //router.get('/search', productoController.search);
 
+router.get("/search", productoController.buscar)
+
 module.exports = router;

@@ -1,16 +1,17 @@
 const express = require('express')
 const router = express.Router()
-const perfilController = require('../controllers/perfilController')
+
+const userController = require('../controllers/userController')
 
 
-router.get('/', perfilController.index );
-router.post("/register", perfilController.create);
+router.get('/', userController.index );
+router.post("/register", userController.create);
 
-router.get('/register', perfilController.show);
-router.post("/newuser", perfilController.create);
+router.get('/register', userController.show);
+router.post("/newuser", userController.create);
 
-router.get("/login", perfilController.login);
+router.get("/login", userController.login);
 
-router.post("/processLogin", perfilController.processLogin)
+router.post("/processLogin", userController.processLogin)
 
 module.exports = router;
