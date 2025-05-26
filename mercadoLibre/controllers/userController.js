@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs")
 
 
 
-let usersController = {
+let userController = {
     index: function (req, res) {
         res.render('profile', { usuario: data.usuario, productos: data.productos })
     },
@@ -23,9 +23,9 @@ let usersController = {
         const user = {
             name: req.body.usuario,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.contrasena, 10)
+            password: bcrypt.hashSync(req.body.password, 10)
         }
-        if(req.body.contrasena.length < 3 ){
+        if(req.body.password.length < 3 ){
     	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
             }
 
@@ -100,7 +100,7 @@ let usersController = {
 };
 
 
-module.exports = usersController;
+module.exports = userController;
 
 
 
