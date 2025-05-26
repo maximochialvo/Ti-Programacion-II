@@ -22,7 +22,9 @@ let usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.contrasena, 10)
         }
-
+        if(req.body.contrasena.length < 3 ){
+    	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
+            }
 
         db.User.create(user)
         .then(function (userCreated) {
