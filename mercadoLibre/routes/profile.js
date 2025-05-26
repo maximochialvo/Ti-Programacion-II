@@ -6,11 +6,11 @@ const perfilController = require('../controllers/perfilController')
 router.get('/', perfilController.index );
 router.post("/register", perfilController.create);
 
-router.get('/register', usersController.show );
-router.post("/newuser", usersController.create);
+router.get('/register', perfilController.show);
+router.post("/newuser", perfilController.create);
 
-router.get("/login", usersController.login);
+router.get("/login", perfilController.login);
 
-router.post("/processLogin", usersController.processLogin)
+router.post("/processLogin", perfilController.processLogin)
 
 module.exports = router;

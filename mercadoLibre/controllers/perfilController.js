@@ -69,7 +69,7 @@ let usersController = {
                 }
                 res.redirect("/")
             } else {
-                return res.send("contrasenia no coincide")
+                return res.send("contraseña no coincide")
             }
 
         }).catch(function (error) {
@@ -77,15 +77,13 @@ let usersController = {
         })
 
 
-
         //Si además el usuario tildó "recordame" entonces también creamos una cookie con los datos del usuario.
 
         console.log(req.body);
     },
 
-
-
-    logout: function (req, res) {
+    
+    logout: function(req, res) {
         //Procesamos el logout destruyendo la sesión y eliminando la cookie.
         req.session.destroy()
          res.clearCookie("recordarme"); // ← igual que el ejemplo de la imagen
