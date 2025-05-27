@@ -3,7 +3,7 @@ let db = require("../database/models");
 const bcrypt = require("bcryptjs");
 
 let userController = {
-    index: function (req, res) {
+     index: function (req, res) {
         res.render('profile', { usuario: data.usuario, productos: data.productos })
     },
 
