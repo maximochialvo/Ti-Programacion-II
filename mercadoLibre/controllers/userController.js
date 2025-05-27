@@ -1,82 +1,82 @@
 //const data = require('../db/datos')
 let db = require("../database/models");
-const bcrypt = require("bcryptjs")
-
-
-
+const bcrypt = require("bcryptjs");
 
 let userController = {
     index: function (req, res) {
         res.render('profile', { usuario: data.usuario, productos: data.productos })
     },
-    show: function (req, res) {
-        if (req.session.user) {
-            return res.redirect("/")
-        }
-        return res.render("register");
 
+    
+    show: function (req, res) {
+        if (req.session.user != undefined) {
+            return res.redirect("/usuario")
+        }else{
+        return res.render("register", {titulo : 'registro'});
+        }
 
     },
 
     create: function (req, res) {
 
-        const user = {
-            name: req.body.usuario,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10)
-        }
-        if(req.body.contrasena.length < 3 ){
+        if(req.body.password.length < 3 ){
     	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
             }
+        db.User.findOne({
+            where: [{ email: req.body.email }]
+        })
+        .then(function (usuario) {
+            if (usuario) {
+                return res.send("El usuario ya existe ");
+            }
 
-        db.User.create(user)
-        .then(function (userCreated) {
-            return res.redirect("/")
-        }).catch(function (error) {
+            const contraseniaValida = bcrypt.hashSync(req.body.password, 10)
+            return db.User.create({
+            name: req.body.usuario,
+            email: req.body.email,
+            password: contraseniaValida
+        })     
+            .then(function(){
+                return res.redirect('/user/login')
+            }
+        )   .catch(function (error) {
+                return res.send(error)
+            })
+      .catch(function (error) {
             return res.send(error)
         })
-
+    })
+            
 
     },
-
-
-
-
-
     login: function (req, res) {
-         if (req.session.user) {
+         if (req.session.user != undefined) {
             return res.redirect("/")
-        }
-        return res.render("login");
-    },
+        }else{
+        return res.render("login", {titulo : 'login'});
+    }},
 
     processLogin: function (req, res) {
 
         db.User.findOne({
             where: [{ email: req.body.email }]
         }).then(function (usuario) {
-            if (!usuario) {
-                return res.send("No exsiste ese email en la base de datos");
-            }
+            if (usuario != null) {
+                const contraseniaValida = bcrypt.compareSync(req.body.password, usuario.password);
+                console.log(contraseniaValida)
+                if (contraseniaValida) {
 
-            console.log(resultado, 'resultado aca')
-
-
-
-            const contraseniaValida = bcrypt.compareSync(req.body.contrasena, usuario.contrasena);
-
-            console.log(contraseniaValida)
-
-            if (contraseniaValida) {
-
-                req.session.user = resultado
-                console.log('funciona')
-                if (req.body.recordarme) {
-                    res.cookie("recordarme", resultado.id, {maxAge: 1000*60*5})
-                }
-                return res.redirect("/")
-            } else {
-                return res.send("contraseña no coincide")
+                    req.session.user = resultado
+                    if (req.body.recordarme != undefined) {
+                        res.cookie("recordarme", resultado.id, {maxAge: 1000*60*5})
+                    }
+                    console.log(req.session.user)
+                    return res.redirect("/")
+                } else {
+                    return res.send("contraseña no coincide")
+            }}
+            else{
+                return res.send('Usuario no identificado')
             }
 
         }).catch(function (error) {
@@ -84,14 +84,13 @@ let userController = {
         })
 
 
-        //Si además el usuario tildó "recordame" entonces también creamos una cookie con los datos del usuario.
-
-        console.log(req.body);
+       
+  
     },
 
     
     logout: function(req, res) {
-        //Procesamos el logout destruyendo la sesión y eliminando la cookie.
+    
         req.session.destroy()
          res.clearCookie("recordarme"); 
         res.redirect("/");
