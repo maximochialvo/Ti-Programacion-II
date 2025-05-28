@@ -1,82 +1,84 @@
 //const data = require('../db/datos')
 let db = require("../database/models");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 
-
-
-
-let usersController = {
+let userController = {
     index: function (req, res) {
-        res.render('profile', { usuario: data.usuario, productos: data.productos })
-    },
-    show: function (req, res) {
         if (req.session.user) {
-            return res.redirect("/")
+            res.render('profile', { usuario: res.req.user })
+        } else {
+            res.redirect('/user/login')
         }
-        return res.render("register");
+    },
 
+
+    show: function (req, res) {
+        if (req.session.user != undefined) {
+            return res.redirect("/usuario")
+        } else {
+            return res.render("register", { titulo: 'registro' });
+        }
 
     },
 
     create: function (req, res) {
 
-        const user = {
-            name: req.body.usuario,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.contrasena, 10)
+        if (req.body.password.length < 3) {
+            return res.send("la contrasenia tiene que tener al menos 3 caracteres")
         }
-        if(req.body.contrasena.length < 3 ){
-    	        return res.send("la contrasenia tiene que tener al menos 3 caracteres")
-            }
-
+        const contrasenascript = bcrypt.hashSync(req.body.password,10)
+        const user = {
+            email: req.body.email,
+            contrasena: contrasenascript,
+            usuario: req.body.usuario,
+            birthDate: req.body.birthDate
+        }
         db.User.create(user)
-        .then(function (userCreated) {
-            return res.redirect("/")
-        }).catch(function (error) {
-            return res.send(error)
-        })
+
+            .then(function () {
+                return res.redirect('/user/login')
+            }
+            ).catch(function (error) {
+                return res.send(error)
+            })
+
+
 
 
     },
-
-
-
-
-
     login: function (req, res) {
-         if (req.session.user) {
+        if (req.session.user != undefined) {
             return res.redirect("/")
+        } else {
+            return res.render("login", { titulo: 'login' });
         }
-        return res.render("login");
     },
 
     processLogin: function (req, res) {
+        console.log('entrando a metodo login')
 
         db.User.findOne({
             where: [{ email: req.body.email }]
-        }).then(function (resultado) {
-            if (!resultado) {
-                return res.send("No exsiste ese email en la base de datos");
-            }
+        }).then(function (usuario) {
+            console.log(usuario)
+            if (usuario) {
+                console.log(req.body.password,usuario.contrasena)
+                const contraseniaValida = bcrypt.compareSync('123456', usuario.contrasena);
+                console.log(contraseniaValida)
+                if (contraseniaValida) {
 
-            console.log(resultado, 'resultado aca')
-
-
-
-            const contraseniaValida = bcrypt.compareSync(req.body.contrasena, resultado.password);
-
-            console.log(contraseniaValida)
-
-            if (contraseniaValida) {
-
-                req.session.user = resultado
-                console.log('funciona')
-                if (req.body.recordarme) {
-                    res.cookie("recordarme", resultado.id, {maxAge: 1000*60*5})
+                    req.session.user = usuario
+                    if (req.body.recordarme != undefined) {
+                        res.cookie("recordarme", usuario.id, { maxAge: 1000 * 60 * 5 })
+                    }
+                    console.log(req.session.user)
+                    return res.redirect("/")
+                } else {
+                    return res.send("contraseña no coincide")
                 }
-                res.redirect("/")
-            } else {
-                return res.send("contraseña no coincide")
+            }
+            else {
+                return res.send('Usuario no identificado')
             }
 
         }).catch(function (error) {
@@ -84,23 +86,22 @@ let usersController = {
         })
 
 
-        //Si además el usuario tildó "recordame" entonces también creamos una cookie con los datos del usuario.
 
-        console.log(req.body);
+
     },
 
-    
-    logout: function(req, res) {
-        //Procesamos el logout destruyendo la sesión y eliminando la cookie.
+
+    logout: function (req, res) {
+
         req.session.destroy()
-         res.clearCookie("recordarme"); 
+        res.clearCookie("recordarme");
         res.redirect("/");
     }
 
 };
 
 
-module.exports = usersController;
+module.exports = userController;
 
 
 
