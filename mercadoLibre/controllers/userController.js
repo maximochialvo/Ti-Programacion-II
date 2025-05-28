@@ -4,7 +4,11 @@ const bcrypt = require("bcryptjs");
 
 let userController = {
      index: function (req, res) {
-        res.render('profile', { usuario: data.usuario, productos: data.productos })
+        if(req.session.user){
+        res.render('profile', { usuario: res.req.user })
+        }else{
+            res.redirect('/user/login')
+        }
     },
 
     
@@ -66,9 +70,9 @@ let userController = {
                 console.log(contraseniaValida)
                 if (contraseniaValida) {
 
-                    req.session.user = resultado
+                    req.session.user = usuario
                     if (req.body.recordarme != undefined) {
-                        res.cookie("recordarme", resultado.id, {maxAge: 1000*60*5})
+                        res.cookie("recordarme", usuario.id, {maxAge: 1000*60*5})
                     }
                     console.log(req.session.user)
                     return res.redirect("/")

@@ -7,6 +7,8 @@ CREATE TABLE usuarios (
     email VARCHAR(100) NOT NULL UNIQUE,
     usuario VARCHAR(50),
     contrasena VARCHAR(50) NOT NULL,
+    birthDate DATE,
+    remember_token VARCHAR(255),
     fecha_nacimiento DATE NOT NULL,
     dni INT NOT NULL,
     foto_perfil TEXT NOT NULL,
