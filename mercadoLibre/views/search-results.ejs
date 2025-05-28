@@ -15,31 +15,35 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for( let i=0; i < productos.length; i++ ) { %>
+
+			<% if (producto.length == 0) { %>
+				<div class="col-12">
+					<p>No hay resultados para su criterio de búsqueda.</p>
+				</div>
+			<% } else { %>
+			 
+			<% for( let i=0; i < producto.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/producto">
+						<a href="/producto/detalle/<% producto[i].id %>">
 							<figure class="product-box_image">
-								<img src="<%- productos[i].imagen %>" alt="cafetera moulinex">
+								<img src="<%- producto[i].imagen_producto %>" alt="cafetera moulinex">
 							</figure>
 							<article class="product-box_data">
 								<h2>
-									<%- productos[i].nombre %>
+									<%- producto[i].nombre_producto %>
 								</h2>
 								<p>
-									<%- productos[i].descripcion %>
-								</p>
-								<p>Comentarios: 
-
-									<%= productos[i].comentarios.length %>
+									<%- producto[i].descripcion %>
 								</p>
 							</article>
 						</a>
 					</section>
 				</div>
-				<% } %>		
+				<% } %>
+			<% } %>		
+		</div>
+	</div>
 			<%- include("./partials/footer") %>
 </body>
-<
-
 </html>

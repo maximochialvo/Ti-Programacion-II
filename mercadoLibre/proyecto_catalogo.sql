@@ -50,16 +50,16 @@ INSERT INTO usuarios (email, usuario, contrasena, fecha_nacimiento, dni, foto_pe
 
 
 INSERT INTO productos (usuario_id, imagen_producto, nombre_producto, descripcion) VALUES
-(1, 'prod1.jpg', 'Producto 1', 'Descripción del producto 1'),
-(1, 'prod2.jpg', 'Producto 2', 'Descripción del producto 2'),
-(2, 'prod3.jpg', 'Producto 3', 'Descripción del producto 3'),
-(2, 'prod4.jpg', 'Producto 4', 'Descripción del producto 4'),
-(3, 'prod5.jpg', 'Producto 5', 'Descripción del producto 5'),
-(3, 'prod6.jpg', 'Producto 6', 'Descripción del producto 6'),
-(4, 'prod7.jpg', 'Producto 7', 'Descripción del producto 7'),
-(4, 'prod8.jpg', 'Producto 8', 'Descripción del producto 8'),
-(5, 'prod9.jpg', 'Producto 9', 'Descripción del producto 9'),
-(5, 'prod10.jpg', 'Producto 10', 'Descripción del producto 10');
+(1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbgnW7I-duvxlziaV7asW0JaOUF-_DNBkVmg&s', 'Chevrolet Onix', 'Auto compacto moderno y eficiente.'),
+(1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSHSdEJadvtDqJSNWKbZiwtRstZXE5JwzgFg&s', 'Toyota Hilux', 'Camioneta robusta ideal para trabajo pesado.'),
+(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQksKXx6XFbAcamfGqA5hXYNVtb1Xkr5Ri2mg&s', 'Ford Ranger', 'Pick-up de gran potencia y tecnología.'),
+(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWmYeonymIcZMegNpptqkkVvX7y_v8GaJHdg&s', 'Renault Sandero RS', 'Versión deportiva del hatchback Sandero.'),
+(3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqXrX-iDk8j7GWmiLbzociG9ZELjdZBe9dA&s', 'Volkswagen Amarok', 'Camioneta potente y cómoda.'),
+(3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvcp_6cVVi8H-cjguN3g8KH_8DE0MUv1xuMg&s', 'Fiat Cronos', 'Sedán compacto, el más vendido en Argentina.'),
+(4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYwB4ycF5IY3rH2JshQ8QRLnu9I57iTEs50A&s', 'Peugeot 208', 'Auto urbano con gran diseño europeo.'),
+(4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWDbgWPepZEX8CDA8mAi2evRRnhQeRKG6tjA&s', 'Honda Civic Type R', 'Hatchback deportivo de alto rendimiento.'),
+(5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtqdEWLWW8MyBB4lfeCPPmx3DiVhQfXiJVDg&s', 'Kia Sportage', 'SUV elegante con buen rendimiento.'),
+(5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfcutsJgqhXOMWqUUUVMiXPmVhKyb8uIm4qQ&s', 'Tesla Cybertruck', 'Camioneta eléctrica futurista.');
 
 
 INSERT INTO comentarios (producto_id, usuario_id, texto) VALUES
