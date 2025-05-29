@@ -10,7 +10,7 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title">
-				<%= producto.nombre %>
+				<%= producto.nombre_producto %>
 			</h2> 
 			<p class="product-detail-description">
 				<a href="/producto/add">Editar</a>
@@ -19,28 +19,12 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= producto.imagen %>" alt="" class="product-detail-img">
+					<img src="<%= producto.imagen_producto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= producto.descripcion %>	
 					</p>
 				</article>
 				<div class="col-12 col-lg-4">
-					<% for( let i = 0; i < producto.comentarios.length; i++ ) { %>
-						<section class="comments">
-							<article>
-								
-								<img src="<%= producto.comentarios[i].imgPerfil %>" alt="">
-								<div class="data">
-			
-									<p class="user">
-										<strong> <a href="/profile">Nombre usuario: <%= producto.comentarios[i].nombreUsuario %></a> </strong>
-										<%= producto.comentarios[i].comentario %>
-									</p>
-								</div>
-							</article>
-							
-						</section>
-					<% } %>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>

@@ -4,12 +4,23 @@ const data = require('../db/datos')
 
 const productoController = {
     detalle: function (req, res) {
-      const producto = data.productos[0]
-      res.render('product', {producto: producto})
-    },
+      //const producto = data.productos[0]
+      //res.render('product', {producto: producto})
+      
+      const id = req.params.id
+      db.Producto.findByPk(id)
+        .then(function(response){
+          console.log(response)
+          res.render('product', {producto: response})
+        })
+        .catch(function(error){
+          return res.send(error)
+        })
+      },
+    
     add: function (req, res) {
       res.render('productAdd')
-  }, 
+    }, 
 
     buscar: function (req, res){
       const busqueda = req.query.search;
