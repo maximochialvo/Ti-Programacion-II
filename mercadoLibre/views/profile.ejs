@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- Include Head -->
-<%- include("./partials/head.ejs")%>
+<%- include("./partials/head")%>
+<% if (locals.user != undefined) { %>
+
+	<%- include('./partials/headerLogueado')%>
+<% } else { %>
+	<%- include("./partials/header") %>
+	<% } %>
+
 <body>
 
 	
-	<%- include('./partials/headerLogueado.ejs') %>
+	<%- include %>
 
 	<!-- Datos del usuario -->
 	<section class="info-usuario container products-wrapper">
@@ -27,9 +34,9 @@
 				</div>
 				<div>
 					<ul class="pirulo">
-						<li>8 productos</li>
+						<li> <%= usuario.productos.length %> productos</li> 
 						<li>200 seguidores</li>
-						<li>300 comentarios</li>
+						<li> <%= usuario.comentarios.length %>  comentarios</li>
 					</ul>
 				</div>
 			</div>
@@ -41,22 +48,22 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Productos</h2>
+				<h2 class="products-title">Productos de <%= usuario.usuario %></h2> 
 			</div>
 			<!-- Show the "ultimos" products -->
-			<% for( let i=0; i < productos.length; i++ ) { %>
+			<% for( let i=0; i < usuario.productos.length; i++ ) { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/producto/detalle/7">
+						<a href="/producto/detalle/<%= usuario.productos[i].id %>">
 							<figure class="product-box_image">
-								<img src="<%- productos[i].imagen %>" alt="cafetera moulinex">
+								<img src="<%- usuario.productos[i].imagen_producto %>" alt="cafetera moulinex">
 							</figure>
 							<article class="product-box_data">
 								<h2>
-									<%- productos[i].nombre %>
+									<%= usuario.productos[i].nombre %>
 								</h2>
 								<p>
-									<%- productos[i].descripcion %>
+									 <%= usuario.productos[i].descripcion %>
 								</p>
 								<p>Comentarios: 
 

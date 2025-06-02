@@ -1,5 +1,5 @@
 //const data = require('../db/datos')
-const { where } = require("sequelize");
+//const  = require("sequelize");
 let db = require("../database/models");
 const bcrypt = require("bcryptjs");
 
@@ -32,7 +32,9 @@ let userController = {
             email: req.body.email,
             contrasena: contrasenascript,
             usuario: req.body.usuario,
-            birthDate: req.body.birthDate
+            birthDate: req.body.birthDate,
+            foto_perfil: req.body.foto
+
         }
         db.User.create(user)
 
@@ -63,7 +65,7 @@ let userController = {
         }).then(function (usuario) {
             console.log(usuario)
             if (usuario) {
-                console.log(req.body.password,usuario.contrasena)
+                console.log(req.body.password, usuario.contrasena)
                 const contraseniaValida = bcrypt.compareSync(req.body.password, usuario.contrasena);
                 console.log(contraseniaValida)
                 if (contraseniaValida) {
@@ -91,27 +93,32 @@ let userController = {
 
     },
 
-    profile: function(req,res){
-        const userid = req.session.user.id
-        db.user.findByPk(userid)
-        .then(function(user){
-            if(!user){
-                return res.send('usuario no encontrado')
-            }
-            db.Producto.findAll({
-            where:{usuario_id : userid}
-        }) 
-        .then(function(productos){
-            const totalproductos = productos.length
-            res.render('perfil', {usuario: user,
-                productos:productos, totalproductos: totalproductos
+    profile: function (req, res) {
+
+        
+        const id = req.params.id
+        
+        // Then -> productos
+        // En el render, mandar info del usuario
+        // Vista -> Mostras info de usuario, productos, y comentarios 
+        db.User.findByPk(id, {
+            include:[
+
+            {association: 'productos'},
+            {association: 'comentarios'},
+
+            ]})  .then(function (resultado) {
+                console.log(resultado);
+                
+                return res.render('profile', {usuario:resultado } )
+                
+                
             })
-        }).catch(function (error) {
-            return res.send(error)
-        })
-        }  	
-    )
+            .catch(function (error) {
+                return res.send(error)
+            })
     },
+
 
 
     logout: function (req, res) {
