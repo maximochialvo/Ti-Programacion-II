@@ -29,9 +29,9 @@ let userController = {
         }
         const contrasenascript = bcrypt.hashSync(req.body.password, 10)
         const user = {
+            usuario: req.body.usuario,
             email: req.body.email,
             contrasena: contrasenascript,
-            usuario: req.body.usuario,
             birthDate: req.body.birthDate,
             foto_perfil: req.body.foto
 
@@ -42,7 +42,7 @@ let userController = {
                 return res.redirect('/user/login')
             }
             ).catch(function (error) {
-                return res.send(error)
+                return res.send("Este email fue usado")
             })
 
 
@@ -51,7 +51,7 @@ let userController = {
     },
     login: function (req, res) {
         if (req.session.user != undefined) {
-            return res.redirect("/")
+            return res.redirect("/perfil")
         } else {
             return res.render("login", { titulo: 'login' });
         }
@@ -70,7 +70,7 @@ let userController = {
                 console.log(contraseniaValida)
                 if (contraseniaValida) {
                     console.log('entro al if')
-                    req.session.user = usuario
+                    req.session.user = usuario;
                     if (req.body.recordarme != undefined) {
                         res.cookie("recordarme", usuario.id, { maxAge: 1000 * 60 * 5 })
                     }
@@ -110,6 +110,7 @@ let userController = {
             ]})  .then(function (resultado) {
                 console.log(resultado);
                 
+
                 return res.render('profile', {usuario:resultado } )
                 
                 

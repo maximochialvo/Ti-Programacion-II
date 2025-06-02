@@ -1,4 +1,4 @@
-module.exports = function (sequelize, dataTypes){
+module.exports = function (sequelize, dataTypes) {
 
     let alias = 'User';
 
@@ -9,7 +9,9 @@ module.exports = function (sequelize, dataTypes){
             primaryKey: true,
             
         },
-
+//        name: {
+  //          type: dataTypes.STRING
+  //      },
         email: {
             type: dataTypes.STRING
         },
@@ -25,22 +27,33 @@ module.exports = function (sequelize, dataTypes){
         remember_token: {
             type: dataTypes.STRING
         }
-        
+
     }
 
     let config = {
-        tableName : "usuarios",
-        timestamps:true,
+        tableName: "usuarios",
+        timestamps: true,
         underscored: false,
     };
 
     const User = sequelize.define(alias, cols, config);
 
+
+    User.associate = function (models) {
+        User.hasMany(models.Producto, {
+            as: "productos",
+            foreignKey: "usuario_id"
+        });
+     User.hasMany(models.Comentario, {
+            as: 'comentarios',
+            foreignKey: 'usuario_id'
+        });
+  
+    }
+
+
     return User;
 
-    User.hasMany(models.Producto, {
-     as: "productos",
-     foreignKey: "usuario_id"
-});
 
-}
+
+};
