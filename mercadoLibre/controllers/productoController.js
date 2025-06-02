@@ -25,11 +25,10 @@ const productoController = {
     buscar: function (req, res){
       const busqueda = req.query.search;
       console.log('Busqueda' , busqueda)
-
       db.Producto.findAll({
-        where: [
-          {nombre_producto: {[op.like]: `%${busqueda}%`}}
-        ]
+        where: 
+          {nombre_producto: {[op.like]: `%${busqueda}%`}},
+          include: [{association: "usuario"}]
       })
         .then(function(resultados){
           return res.render("search-results", {producto: resultados})

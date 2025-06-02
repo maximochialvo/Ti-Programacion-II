@@ -36,6 +36,9 @@
 								<p>
 									<%- producto[i].descripcion %>
 								</p>
+								<p>
+									<a href="/user/perfil/<%= producto[i].usuario.id %>"><%= producto[i].usuario.usuario %></a>
+								</p>
 							</article>
 						</a>
 					</section>
