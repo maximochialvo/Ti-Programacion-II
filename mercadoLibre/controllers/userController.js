@@ -92,7 +92,7 @@ let userController = {
     },
 
     profile: function(req,res){
-        const userid = req.session.user.id
+        const userid = req.session.user
         db.user.findByPk(userid)
         .then(function(user){
             if(!user){
