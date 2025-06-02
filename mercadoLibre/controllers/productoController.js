@@ -28,7 +28,7 @@ const productoController = {
 
       db.Producto.findAll({
         where: [
-          {nombre_producto: {[op.like]: `${busqueda}%`}}
+          {nombre_producto: {[op.like]: `%${busqueda}%`}}
         ]
       })
         .then(function(resultados){
