@@ -93,6 +93,22 @@ let userController = {
 
     },
 
+<<<<<<< HEAD
+    profile: function(req,res){
+        const userid = req.session.user
+        db.user.findByPk(userid)
+        .then(function(user){
+            if(!user){
+                return res.send('usuario no encontrado')
+            }
+            db.Producto.findAll({
+            where:{usuario_id : userid}
+        }) 
+        .then(function(productos){
+            const totalproductos = productos.length
+            res.render('perfil', {usuario: user,
+                productos:productos, totalproductos: totalproductos
+=======
     profile: function (req, res) {
 
         
@@ -117,6 +133,7 @@ let userController = {
             })
             .catch(function (error) {
                 return res.send(error)
+>>>>>>> d3fc4b065f1a28464182c9d14c3f3f0bd25e3ab3
             })
     },
 

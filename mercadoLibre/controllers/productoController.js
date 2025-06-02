@@ -53,6 +53,30 @@ const productoController = {
     .catch(function(error){
           return res.send(error);
     });
+    },
+
+    comentario: function (req,res){
+
+      if (!req.session.user) {
+        return res.redirect("/user/login");
+    }
+
+    const nuevocomentario = {
+        texto: req.body.texto,
+        usuario_id: req.session.user.id,
+        producto_id: req.params.id,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    }
+  
+    db.comentario.create(nuevocomentario)
+    .then(function(){
+      res.redirect('/productos' + req.params.id)
+    })
+    .catch(function(error){
+          return res.send(error);
+    })
+  
     }
   };
 
