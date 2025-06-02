@@ -38,6 +38,22 @@ const productoController = {
           return res.send(error);
       })      
 
+    },
+
+    detail: function (req, res){
+      db.Producto.findByPk(req.params.id)
+    .then(function(producto){
+      if (!producto) {
+        return res.send("Producto no encontrado");
+      }else{
+      res.render("detalle", { producto });
+
+      }
+
+    })
+    .catch(function(error){
+          return res.send(error);
+    });
     }
   };
 

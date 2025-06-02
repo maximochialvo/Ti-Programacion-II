@@ -8,5 +8,6 @@ router.get('/add', productoController.add)
 //router.get('/search', productoController.search);
 
 router.get("/search", productoController.buscar)
+router.get("/:id", productoController.detail)
 
 module.exports = router;
