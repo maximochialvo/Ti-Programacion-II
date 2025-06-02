@@ -4,13 +4,14 @@ module.exports = function (sequelize, dataTypes) {
 
     let cols = {
         id: {
+            type: dataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER
+            
         },
-        //        name: {
-        //          type: dataTypes.STRING
-        //      },
+//        name: {
+  //          type: dataTypes.STRING
+  //      },
         email: {
             type: dataTypes.STRING
         },
@@ -43,6 +44,11 @@ module.exports = function (sequelize, dataTypes) {
             as: "productos",
             foreignKey: "usuario_id"
         });
+     User.hasMany(models.Comentario, {
+            as: 'comentarios',
+            foreignKey: 'usuario_id'
+        });
+  
     }
 
 
@@ -50,4 +56,4 @@ module.exports = function (sequelize, dataTypes) {
 
 
 
-}
+};

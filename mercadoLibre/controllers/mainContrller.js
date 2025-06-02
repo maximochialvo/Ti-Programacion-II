@@ -1,6 +1,5 @@
 const data = require('../db/datos')
 const db = require('../database/models');
-const { Association } = require('sequelize');
 const op = db.Sequelize.Op;
 
 const mainController = {
