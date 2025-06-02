@@ -12,5 +12,6 @@ router.get('/register', userController.show);
 router.get("/login", userController.login);
 
 router.post("/processLogin", userController.processLogin)
+router.get('/perfil', userController.profile);
 
 module.exports = router;

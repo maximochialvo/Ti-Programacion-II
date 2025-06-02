@@ -1,4 +1,5 @@
 //const data = require('../db/datos')
+const { where } = require("sequelize");
 let db = require("../database/models");
 const bcrypt = require("bcryptjs");
 
@@ -26,7 +27,7 @@ let userController = {
         if (req.body.password.length < 3) {
             return res.send("la contrasenia tiene que tener al menos 3 caracteres")
         }
-        const contrasenascript = bcrypt.hashSync(req.body.password,10)
+        const contrasenascript = bcrypt.hashSync(req.body.password, 10)
         const user = {
             email: req.body.email,
             contrasena: contrasenascript,
@@ -63,10 +64,10 @@ let userController = {
             console.log(usuario)
             if (usuario) {
                 console.log(req.body.password,usuario.contrasena)
-                const contraseniaValida = bcrypt.compareSync('123456', usuario.contrasena);
+                const contraseniaValida = bcrypt.compareSync(req.body.password, usuario.contrasena);
                 console.log(contraseniaValida)
                 if (contraseniaValida) {
-
+                    console.log('entro al if')
                     req.session.user = usuario
                     if (req.body.recordarme != undefined) {
                         res.cookie("recordarme", usuario.id, { maxAge: 1000 * 60 * 5 })
@@ -88,6 +89,28 @@ let userController = {
 
 
 
+    },
+
+    profile: function(req,res){
+        const userid = req.session.user.id
+        db.user.findByPk(userid)
+        .then(function(user){
+            if(!user){
+                return res.send('usuario no encontrado')
+            }
+            db.Producto.findAll({
+            where:{usuario_id : userid}
+        }) 
+        .then(function(productos){
+            const totalproductos = productos.length
+            res.render('perfil', {usuario: user,
+                productos:productos, totalproductos: totalproductos
+            })
+        }).catch(function (error) {
+            return res.send(error)
+        })
+        }  	
+    )
     },
 
 

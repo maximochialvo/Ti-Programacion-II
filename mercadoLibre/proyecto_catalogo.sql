@@ -6,7 +6,7 @@ CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL UNIQUE,
     usuario VARCHAR(50),
-    contrasena VARCHAR(50) NOT NULL,
+    contrasena VARCHAR(200) NOT NULL,
     birthDate DATE,
     remember_token VARCHAR(255),
     fecha_nacimiento DATE NOT NULL,
