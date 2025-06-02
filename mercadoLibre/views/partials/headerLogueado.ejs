@@ -38,18 +38,30 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
+					
 					<li><a href="/">Todos los productos</a></li>
 					<li><a href="/producto/add">Cargar productos</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
-					<li>
-						<form action="/" >
-							<button class="logout" type="submit">
-							Cerrar sesión	 <i class="fas fa-sign-in-alt"></i>
-							</button>
-						</form>
-					</li>
+					<a href="/user/perfil/<%= locals.user.id %>">
+						<%= locals.user.usuario %>
+					</a>
+					<ul>
+<li>
+    <br>
+    <% if (locals.user != undefined) { %>
+		<h2> Hola <%= locals.user.email %>!</h2> 
+		
+  <form action="/user/logout" method="post">
+    <button type="submit">Cerrar sesión</button>
+  </form>
+
+<% } %>
+</li>
+
+
+					
 					<!-- Solo deslogueado <li>
 						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
@@ -64,17 +76,7 @@
 	</header>
 	<!-- /Header -->
 
-	<ul>
 
-    <br>
-    <% if (locals.user) { %>
-  <form action="/logout" method="POST">
-    <button type="submit">Cerrar sesión</button>
-  </form>
-<% } %>
-<%= locals.user.name %> - <%= locals.user.email %>
-<h1> Hola <%= locals.user.name %>!</h1>
-</ul>
 
 		
 </body>	

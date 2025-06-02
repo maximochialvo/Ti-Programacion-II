@@ -46,7 +46,7 @@ const productoController = {
       if (!producto) {
         return res.send("Producto no encontrado");
       }else{
-      res.render("detalle", { producto });
+        res.render("detalle", { producto });
 
       }
 

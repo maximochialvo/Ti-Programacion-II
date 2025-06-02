@@ -40,6 +40,7 @@ app.use('/', mainRutas);
 app.use('/producto', productoRutas);
 app.use('/user', userRutas);
 
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
