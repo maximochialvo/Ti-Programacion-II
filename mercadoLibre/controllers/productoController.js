@@ -3,20 +3,34 @@ const op = db.Sequelize.Op;
 const data = require('../db/datos')
 
 const productoController = {
-    detalle: function (req, res) {
-      //const producto = data.productos[0]
-      //res.render('product', {producto: producto})
-      
-      const id = req.params.id
-      db.Producto.findByPk(id)
-        .then(function(response){
-          console.log(response)
-          res.render('product', {producto: response})
-        })
-        .catch(function(error){
-          return res.send(error)
-        })
-      },
+  detalle: function (req, res) {
+    const id = req.params.id;
+  
+    db.Producto.findByPk(id, {
+      include: [
+        {
+          association: 'comentarios',
+          include: [
+            {
+              association: 'usuario'
+            }
+          ]
+        }
+      ]
+    })
+      .then(function (producto) {
+        if (producto == undefined) {
+          return res.send("Producto no encontrado");
+        }
+  
+        res.render("product", {
+          producto: producto
+        });
+      })
+      .catch(function (error) {
+        return res.send(error);
+      });
+  },
     
     add: function (req, res) {
       res.render('productAdd')
@@ -89,26 +103,20 @@ const productoController = {
   });
     },
 
-    comentario: function (req,res){
-
-      if (!req.session.user) {
+    comentario: function (req, res) {
+      if (req.session.user == undefined) {
         return res.redirect("/user/login");
-    }
-
-    const nuevocomentario = {
-      texto: req.body.texto,
-      usuario_id: req.session.user.id,
-      producto_id: req.params.id,
-  }  
-  
-    db.Comentario.create(nuevocomentario)
-    .then(function(){
-      res.redirect('/productos' + req.params.id)
-    })
-    .catch(function(error){
-          return res.send(error);
-    })
-  
+      }
+    
+      db.Comentario.create({
+        texto: req.body.texto,
+        usuario_id: req.session.user.id,
+        producto_id: req.params.id
+      }).then(function () {
+        res.redirect('/producto/detalle/' + req.params.id);
+      }).catch(function (error) {
+        return res.send(error);
+      });
     },
 
     nuevoP: function(req, res){

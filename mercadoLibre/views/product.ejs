@@ -3,12 +3,17 @@
 <!-- Include Head -->
 <%- include("./partials/head.ejs")%>
 
-<body>
-	<% if (locals.user) { %>
-		<%- include('./partials/headerLogueado') %>
-	<% } else { %>
-		<%- include('./partials/header') %>
+<% if (locals.user != undefined) { %>
+
+	<%- include('./partials/headerLogueado')%>
+<% } else { %>
+	<%- include("./partials/header") %>
 	<% } %>
+
+<body>
+
+	<!-- Include Header -->
+
 
 	<!-- product detail -->
 	<div class="container products-wrapper">
@@ -17,9 +22,10 @@
 				<%= producto.nombre_producto %>
 			</h2> 
 			<p class="product-detail-description">
-				<a href="/add">Editar</a>
+				<a href="/producto/add">Editar</a>
 			</p>
 		</div>
+
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
@@ -28,11 +34,33 @@
 						<%= producto.descripcion %>	
 					</p>
 				</article>
+
 				<div class="col-12 col-lg-4">
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
+
+					<section>
+						<% for (let i = 0; i < producto.comentarios.length; i++) { %>
+							<article>
+								<img src="<%= producto.comentarios[i].usuario.foto_perfil %>" alt="foto perfil">
+								<div>	
+									<p>
+										<strong>
+											<!-- cambiamos -->
+											<a href="/profile/<%= producto.comentarios[i].usuario.id %>">
+												<%= producto.comentarios[i].usuario.usuario %>
+											</a>:
+										</strong> 
+										<%= producto.comentarios[i].texto %>
+									</p>
+								</div>
+							</article>
+						<% } %>
+					</section>
+
+						<form class="form" action="/producto/<%= producto.id %>/comentario" method="post">
+						<input class="form-input" type="text" name="texto" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
+
 					<hr>
 				</div>
 			</div>
@@ -40,6 +68,7 @@
 	</div>
 	<!-- /product detail -->
 
+	<!-- Include footer -->
 	<%- include("./partials/footer") %>
 </body>	
 </html>
