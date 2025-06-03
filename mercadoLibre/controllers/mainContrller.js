@@ -12,7 +12,7 @@ const mainController = {
         }
       )
       .then(function(resultados){
-        res.render('index', {productos: resultados})
+        res.render('index', {productos: resultados}, )
       })
     },
 

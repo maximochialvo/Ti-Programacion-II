@@ -28,7 +28,8 @@ module.exports = function (sequelize, dataTypes) {
 
     let config = {
         tableName: 'productos',
-        timestamps: false
+        timestamps: true,
+        underscored: false
     }
 
     const Producto = sequelize.define(alias, cols, config);
@@ -38,6 +39,11 @@ module.exports = function (sequelize, dataTypes) {
             as: "usuario",
             foreignKey: "usuario_id"
         });
+
+        Producto.hasMany(models.Comentario, {
+            as: "comentarios",
+            foreignKey: 'producto_id'
+        })
 
                 
 

@@ -5,11 +5,11 @@ const bcrypt = require("bcryptjs");
 
 let userController = {
     index: function (req, res) {
-        if (req.session.user) {
-            res.render('profile', { usuario: res.req.user })
-        } else {
-            res.redirect('/user/login')
-        }
+        //if (req.session.user) {
+        //    res.render('profile', { usuario: res.req.user })
+        //} else {
+        //    res.redirect('/user/login')
+        //}
     },
 
 
@@ -93,51 +93,28 @@ let userController = {
 
     },
 
-<<<<<<< HEAD
-    profile: function(req,res){
-        const userid = req.session.user
-        db.user.findByPk(userid)
-        .then(function(user){
-            if(!user){
-                return res.send('usuario no encontrado')
-            }
-            db.Producto.findAll({
-            where:{usuario_id : userid}
-        }) 
-        .then(function(productos){
-            const totalproductos = productos.length
-            res.render('perfil', {usuario: user,
-                productos:productos, totalproductos: totalproductos
-=======
     profile: function (req, res) {
-
-        
         const id = req.params.id
-        
         // Then -> productos
         // En el render, mandar info del usuario
         // Vista -> Mostras info de usuario, productos, y comentarios 
         db.User.findByPk(id, {
-            include:[
+            include: [
 
-            {association: 'productos'},
-            {association: 'comentarios'},
-
-            ]})  .then(function (resultado) {
-                console.log(resultado);
-                
-
-                return res.render('profile', {usuario:resultado } )
-                
-                
-            })
+                {
+                    association: 'productos',
+                    include: [ 'comentarios'] },
+                    { association: 'comentarios' }
+                    ]
+                })
+            .then(function (resultado) {
+            console.log(resultado);
+            return res.render('profile', { usuario: resultado })
+        })
             .catch(function (error) {
                 return res.send(error)
->>>>>>> d3fc4b065f1a28464182c9d14c3f3f0bd25e3ab3
             })
     },
-
-
 
     logout: function (req, res) {
 

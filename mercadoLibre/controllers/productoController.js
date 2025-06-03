@@ -40,19 +40,53 @@ const productoController = {
     },
 
     detail: function (req, res){
-      db.Producto.findByPk(req.params.id)
-    .then(function(producto){
-      if (!producto) {
-        return res.send("Producto no encontrado");
-      }else{
-        res.render("detalle", { producto });
+      db.Producto.findByPk(req.params.id,{
+        include: [
+          {association: "usuario"},
+          {association: "comentarios", 
+            include: [{association: 'usuario'}]
+          }
 
+        ]}
+      )
+    .then(function(producto){
+      if (req.session.user) {
+        db.User.findByPk(req.session.user.id)
+          .then(function(usuario){
+            return res.render('product', {
+              producto: producto,
+              user: req.session.user,
+              profile: usuario
+            })
+          })
+        
+      }else{
+        res.render("product",
+           { producto: producto });
       }
 
     })
     .catch(function(error){
           return res.send(error);
     });
+    },
+
+    agregarProducto: function(req,res){
+      if(req.session.user == undefined){
+        return res.redirect('/login')
+      }
+      db.Producto.create({
+        usuario_id: req.session.user.id,
+        imagen_producto: req.body.imagen_producto,
+        nombre_producto: req.body.nombre_producto,
+        descripcion: req.body.descripcion,
+      })
+      .then(function(){
+        res.redirect('/');
+      })
+      .catch(function(error){
+        return res.send(error);
+  });
     },
 
     comentario: function (req,res){
@@ -62,14 +96,12 @@ const productoController = {
     }
 
     const nuevocomentario = {
-        texto: req.body.texto,
-        usuario_id: req.session.user.id,
-        producto_id: req.params.id,
-        createdAt: new Date(),
-        updatedAt: new Date()
-    }
+      texto: req.body.texto,
+      usuario_id: req.session.user.id,
+      producto_id: req.params.id,
+  }  
   
-    db.comentario.create(nuevocomentario)
+    db.Comentario.create(nuevocomentario)
     .then(function(){
       res.redirect('/productos' + req.params.id)
     })
@@ -77,7 +109,23 @@ const productoController = {
           return res.send(error);
     })
   
+    },
+
+    nuevoP: function(req, res){
+      if (req.session.user) {
+        db.User.findByPk(req.session.user.id)
+            .then(function(usuario) {
+                return res.render("productAdd", {
+                    user: req.session.user,
+                    perfil: usuario
+                });
+            });
+    } else {
+        return res.render("productAdd");
     }
+},
+
+    
   };
 
 module.exports = productoController;

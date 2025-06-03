@@ -13,7 +13,9 @@ module.exports = function (sequelize, dataTypes) {
   //          type: dataTypes.STRING
   //      },
         email: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING,
+            unique: true,
+            allowNull: false
         },
         usuario: {
             type: dataTypes.STRING
@@ -26,7 +28,11 @@ module.exports = function (sequelize, dataTypes) {
         },
         remember_token: {
             type: dataTypes.STRING
+        },
+        foto_perfil: {
+            type: dataTypes.STRING
         }
+        
 
     }
 
